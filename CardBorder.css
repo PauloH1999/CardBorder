@@ -1,0 +1,37 @@
+body{
+    background: #111;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    position: absolute;
+    width: 360px;
+    height: 620px;
+    background: #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card::after{
+    content: "";
+    width: 102%;
+    height: 101%;
+    position: absolute;
+    background: linear-gradient( #0F0, #FF0, #F00 );
+    z-index: -1;
+    border-radius: 10px;
+    animation: back 2s linear infinite;
+}
+
+@keyframes back{
+    0%{
+        filter: hue-rotate(0deg) brightness(100%) blur(10px);
+    }100%{
+        filter: hue-rotate(360deg) brightness(100%) blur(10px);
+    }
+}
